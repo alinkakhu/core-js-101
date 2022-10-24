@@ -198,7 +198,7 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(width, height) {
+function getRectangleString(/* width, height */) {
   throw new Error('Not implemented');
 }
 
@@ -223,7 +223,7 @@ function encodeToRot13(str) {
   const cipher = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM';
   return str.replace(
     /[a-z]/gi,
-    (letter) => cipher[originalAlpha.indexOf(letter)]
+    (letter) => cipher[originalAlpha.indexOf(letter)],
   );
 }
 

@@ -59,7 +59,7 @@ function getPowerFunction(exponent) {
  *   getPolynom(8)     => y = 8
  *   getPolynom()      => null
  */
-function getPolynom() {
+function getPolynom(...args) {
   const arrayLength = args.length;
   return (x) => {
     if (arrayLength === 3) {
@@ -110,15 +110,16 @@ function memoize(func) {
  * retryer() => 2
  */
 function retry(func, attempts) {
+  let counter = 0;
   return () => {
-    for (let i = 0; i <= attempts; i += 1) {
+    while (counter < attempts) {
       try {
         return func();
-      } catch (e) {
-        continue;
+      } catch (err) {
+        counter += 1;
       }
     }
-    return null;
+    return true;
   };
 }
 

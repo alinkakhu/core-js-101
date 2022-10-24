@@ -346,9 +346,7 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-  arr.reduce((curr, i) => {
-    return curr + i;
-  }, 0);
+  arr.reduce((curr, i) => curr + i);
 }
 
 /**
@@ -463,14 +461,12 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  return Array.from({ length: n }, (v, k) =>
-    Array.from({ length: n }, (i, j) => {
-      if (j === k) {
-        return 1;
-      }
-      return 0;
-    })
-  );
+  return Array.from({ length: n }, (v, k) => Array.from({ length: n }, (i, j) => {
+    if (j === k) {
+      return 1;
+    }
+    return 0;
+  }));
 }
 
 /**

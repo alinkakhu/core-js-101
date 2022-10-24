@@ -69,8 +69,8 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  var xs = x2 - x1,
-    ys = y2 - y1;
+  let xs = x2 - x1;
+  let ys = y2 - y1;
 
   xs *= xs;
   ys *= ys;
@@ -205,14 +205,14 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  if (num <= 1) {
+  if (n <= 1) {
     return false;
   }
-  if (num === 2) {
+  if (n === 2) {
     return true;
   }
-  for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (num % i === 0) {
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
+    if (n % i === 0) {
       return false;
     }
   }

@@ -129,17 +129,21 @@ function isTriangle(a, b, c) {
  *
  */
 function doRectanglesOverlap(rect1, rect2) {
-  const { top: top1, left: left1, width: width1, height: height1 } = rect1;
-  const { top: top2, left: left2, width: width2, height: height2 } = rect2;
+  const {
+    top: top1, left: left1, width: width1, height: height1,
+  } = rect1;
+  const {
+    top: top2, left: left2, width: width2, height: height2,
+  } = rect2;
   return (
-    (top1 + height1 > top2 &&
-      left1 + width1 > left2 &&
-      top1 <= top2 &&
-      left1 <= left2) ||
-    (top2 + height2 > top1 &&
-      left2 + width2 > left1 &&
-      top2 <= top1 &&
-      left2 <= left1)
+    (top1 + height1 > top2
+      && left1 + width1 > left2
+      && top1 <= top2
+      && left1 <= left2)
+      || (top2 + height2 > top1
+      && left2 + width2 > left1
+      && top2 <= top1
+      && left2 <= left1)
   );
 }
 
@@ -171,8 +175,8 @@ function doRectanglesOverlap(rect1, rect2) {
  */
 function isInsideCircle(circle, point) {
   return (
-    (circle.center.x - point.x) ** 2 + (circle.center.y - point.y) ** 2 <
-    circle.radius ** 2
+    (circle.center.x - point.x) ** 2 + (circle.center.y - point.y) ** 2
+    < circle.radius ** 2
   );
 }
 
@@ -438,7 +442,7 @@ function getMatrixProduct(/* m1, m2 */) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(position) {
+function evaluateTicTacToePosition(/* position */) {
   throw new Error('Not implemented');
 }
 
